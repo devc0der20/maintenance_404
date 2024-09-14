@@ -48,13 +48,19 @@
     <img src="404_donkey.jpeg" alt="Under Maintenance">
     <div class="message">Our website is currently</div>
     <div class="message">under maintenance. Please check back later.</div>
-    <audio autoplay loop controls>
+    <audio id="background-audio" loop controls>
       <source src="path/to/your/audiofile.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
   </div>
   <script>
-    document.querySelector('audio').volume = 0.1;
+    document.addEventListener('DOMContentLoaded', function() {
+      const audio = document.getElementById('background-audio');
+      audio.volume = 0.1;
+      audio.play().catch(error => {
+        console.log('Autoplay was prevented:', error);
+      });
+    });
   </script>
 </body>
 </html>
