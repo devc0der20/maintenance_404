@@ -31,6 +31,12 @@
       font-size: 24px;
       margin-top: 20px;
     }
+    audio::-webkit-media-controls {
+      display: none;
+    }
+    audio::-webkit-media-controls-enclosure {
+      display: none;
+    }
   </style>
 </head>
 <body>
@@ -38,8 +44,8 @@
     <img src="404_donkey.jpeg" alt="Under Maintenance">
     <div class="message">Our website is currently</div>
     <div class="message">under maintenance. Please check back later.</div>
-    <audio autoplay loop>
-      <source src="donkey.mp3" type="audio/mpeg">
+    <audio autoplay loop controls>
+      <source src="path/to/your/audiofile.mp3" type="audio/mpeg">
       Your browser does not support the audio element.
     </audio>
   </div>
